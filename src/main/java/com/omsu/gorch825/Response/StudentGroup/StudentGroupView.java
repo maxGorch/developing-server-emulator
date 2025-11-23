@@ -1,10 +1,10 @@
-package com.omsu.gorch825.Response.GroupStudent;
+package com.omsu.gorch825.Response.StudentGroup;
 
-public class GroupStudentView {
+public class StudentGroupView {
     private Long id;
     private String nameGroup;
 
-    public GroupStudentView(Long id, String nameGroup) {
+    public StudentGroupView(Long id, String nameGroup) {
         this.id = id;
         this.nameGroup = nameGroup;
     }

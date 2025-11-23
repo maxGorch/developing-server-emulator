@@ -1,8 +1,8 @@
-package com.omsu.gorch825.Response.GroupStudent;
+package com.omsu.gorch825.Response.StudentGroup;
 
 import java.util.Objects;
 
-public class GroupStudent {
+public class StudentGroup {
     /*
       Написать следующий набор классов для внутреннего представления сущностей. Каждый
       класс включает в себя поле id — уникальный целочисленный идентификатор (может
@@ -12,7 +12,7 @@ public class GroupStudent {
     private Long id;
     private String nameGroup;
 
-    public GroupStudent(Long id, String nameGroup) {
+    public StudentGroup(Long id, String nameGroup) {
         this.id = id;
         this.nameGroup = nameGroup;
     }
@@ -27,7 +27,7 @@ public class GroupStudent {
 
     @Override
     public final boolean equals(Object o) {
-        if (!(o instanceof GroupStudent that)) return false;
+        if (!(o instanceof StudentGroup that)) return false;
 
         return Objects.equals(getId(), that.getId()) && getNameGroup().equals(that.getNameGroup());
     }

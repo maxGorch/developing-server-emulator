@@ -1,6 +1,6 @@
 package com.omsu.gorch825;
 
-import com.omsu.gorch825.Response.GroupStudent.GroupStudent;
+import com.omsu.gorch825.Response.StudentGroup.StudentGroup;
 
 import java.util.List;
 
@@ -24,29 +24,29 @@ public interface IGroupStudentRepositories {
      * @model - на входе сущность с id = null, сущность добавляется в хранилище,
      * при этом ей назначается значение id, этот id возвращается как результат)
      * */
-    Long addGroupStudent(GroupStudent model);
+    Long addStudentGroup(StudentGroup model);
 
     /**
      * @editGroupStudent - редактирование существующей сущности
      * @model - на входе сущность с непустым id, входная
      *         сущность подменяет старую
      * */
-    void editGroupStudent(GroupStudent model);
+    void editStudentGroup(StudentGroup model);
 
     /**
      * @deleteEntity - удаление сущности по id;
      * @idEntity - id  сущности
      * */
-    void deleteGroupStudent(Long idEntity);
+    void deleteStudentGroup(Long idEntity);
 
     /**
      * @getEntityById - получение сущности по id и возвращает объект этой сущности как результат;
      * @idEntity - id  сущности
      * */
-    GroupStudent getGroupStudentById(Long idEntity);
+    StudentGroup getStudentGroupById(Long idEntity);
 
     /**
      * @getAllEntity - получение всех сущностей;
      * */
-    List<GroupStudent> getAllGroupStudent();
+    List<StudentGroup> getStudentGroup();
 }

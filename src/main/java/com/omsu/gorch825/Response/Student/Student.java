@@ -1,6 +1,6 @@
 package com.omsu.gorch825.Response.Student;
 
-import com.omsu.gorch825.Response.GroupStudent.GroupStudent;
+import com.omsu.gorch825.Response.StudentGroup.StudentGroup;
 import com.omsu.gorch825.StudentStatus;
 
 import java.util.Objects;
@@ -17,9 +17,9 @@ public class Student {
     private String middleName;
     private String lastName;
     private StudentStatus status;
-    private GroupStudent group;
+    private StudentGroup group;
 
-    public Student(Long id, GroupStudent group, String firstName, String middleName, String lastName, StudentStatus status) {
+    public Student(Long id, StudentGroup group, String firstName, String middleName, String lastName, StudentStatus status) {
         this.id = id;
         this.group = group;
         this.firstName = firstName;
@@ -32,7 +32,7 @@ public class Student {
         return id;
     }
 
-    public GroupStudent getGroup() {
+    public StudentGroup getGroup() {
         return group;
     }
 
