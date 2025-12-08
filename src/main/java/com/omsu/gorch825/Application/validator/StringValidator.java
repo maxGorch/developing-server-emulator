@@ -1,4 +1,4 @@
-package com.omsu.gorch825.validator;
+package com.omsu.gorch825.Application.validator;
 
 public class StringValidator {
 

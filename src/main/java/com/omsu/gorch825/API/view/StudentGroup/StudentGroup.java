@@ -1,4 +1,4 @@
-package com.omsu.gorch825.view.StudentGroup;
+package com.omsu.gorch825.API.view.StudentGroup;
 
 import java.util.Objects;
 

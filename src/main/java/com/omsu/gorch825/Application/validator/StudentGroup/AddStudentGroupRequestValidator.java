@@ -1,8 +1,8 @@
-package com.omsu.gorch825.validator.StudentGroup;
+package com.omsu.gorch825.Application.validator.StudentGroup;
 
-import com.omsu.gorch825.validator.IRequestValidator;
-import com.omsu.gorch825.models.StudentGroup.AddStudentGroupRequest;
-import com.omsu.gorch825.validator.StringValidator;
+import com.omsu.gorch825.Application.validator.IRequestValidator;
+import com.omsu.gorch825.Domain.models.StudentGroup.AddStudentGroupRequest;
+import com.omsu.gorch825.Application.validator.StringValidator;
 
 import java.util.*;
 

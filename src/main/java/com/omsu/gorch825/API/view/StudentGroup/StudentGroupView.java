@@ -1,4 +1,4 @@
-package com.omsu.gorch825.view.StudentGroup;
+package com.omsu.gorch825.API.view.StudentGroup;
 
 public class StudentGroupView {
     private Long id;

@@ -1,10 +1,10 @@
-package com.omsu.gorch825.validator.Student;
+package com.omsu.gorch825.Application.validator.Student;
 
-import com.omsu.gorch825.validator.IRequestValidator;
-import com.omsu.gorch825.models.Student.AddStudentRequest;
-import com.omsu.gorch825.validator.IdValidator;
-import com.omsu.gorch825.validator.StatusValidator;
-import com.omsu.gorch825.validator.StringValidator;
+import com.omsu.gorch825.Application.validator.IRequestValidator;
+import com.omsu.gorch825.Domain.models.Student.AddStudentRequest;
+import com.omsu.gorch825.Application.validator.IdValidator;
+import com.omsu.gorch825.Application.validator.StatusValidator;
+import com.omsu.gorch825.Application.validator.StringValidator;
 
 import java.util.*;
 

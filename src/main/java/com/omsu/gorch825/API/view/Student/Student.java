@@ -1,6 +1,6 @@
-package com.omsu.gorch825.view.Student;
+package com.omsu.gorch825.API.view.Student;
 
-import com.omsu.gorch825.view.StudentGroup.StudentGroup;
+import com.omsu.gorch825.API.view.StudentGroup.StudentGroup;
 import com.omsu.gorch825.StudentStatus;
 
 import java.util.Objects;

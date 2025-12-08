@@ -1,4 +1,4 @@
-package com.omsu.gorch825.models.Student;
+package com.omsu.gorch825.Domain.models.Student;
 
 import com.omsu.gorch825.StudentStatus;
 

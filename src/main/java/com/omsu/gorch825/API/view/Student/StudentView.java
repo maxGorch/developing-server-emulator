@@ -1,4 +1,4 @@
-package com.omsu.gorch825.view.Student;
+package com.omsu.gorch825.API.view.Student;
 
 public class StudentView {
     /*
