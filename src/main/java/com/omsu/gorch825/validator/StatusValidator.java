@@ -1,4 +1,4 @@
-package com.omsu.gorch825.Validators;
+package com.omsu.gorch825.validator;
 
 
 import com.omsu.gorch825.StudentStatus;

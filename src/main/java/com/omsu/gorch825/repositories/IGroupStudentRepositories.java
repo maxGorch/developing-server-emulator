@@ -1,11 +1,11 @@
-package com.omsu.gorch825;
+package com.omsu.gorch825.repositories;
 
-import com.omsu.gorch825.Response.Student.Student;
+import com.omsu.gorch825.view.StudentGroup.StudentGroup;
 
 import java.util.List;
 
-public interface IStudentRepositories {
-        /*
+public interface IGroupStudentRepositories {
+    /*
         Написать набор интерфейсов репозиториев (хранилищ данных) для сущностей из п.1.
         Каждый репозиторий предоставляет набор методов (возможны дополнительные методы):
 
@@ -20,33 +20,33 @@ public interface IStudentRepositories {
          получение всех сущностей.
     */
     /**
-     * @addStudent - добавляемая сущность в репозиторий и возвращает id этой сущности как результат
+     * @addEntity - добавляемая сущность в репозиторий и возвращает id этой сущности как результат
      * @model - на входе сущность с id = null, сущность добавляется в хранилище,
      * при этом ей назначается значение id, этот id возвращается как результат)
      * */
-    Long addStudent(Student model);
+    Long addStudentGroup(StudentGroup model);
 
     /**
-     * @editStudent - редактирование существующей сущности
+     * @editGroupStudent - редактирование существующей сущности
      * @model - на входе сущность с непустым id, входная
      *         сущность подменяет старую
      * */
-    void editStudent(Student model);
+    void editStudentGroup(StudentGroup model);
 
     /**
-     * @deleteStudent - удаление сущности по id;
+     * @deleteEntity - удаление сущности по id;
      * @idEntity - id  сущности
      * */
-    void deleteStudent(Long idEntity);
+    void deleteStudentGroup(Long idEntity);
 
     /**
-     * @getStudentById - получение сущности по id и возвращает объект этой сущности как результат;
+     * @getEntityById - получение сущности по id и возвращает объект этой сущности как результат;
      * @idEntity - id  сущности
      * */
-    Student getStudentById(Long idEntity);
+    StudentGroup getStudentGroupById(Long idEntity);
 
     /**
-     * @getAllStudent - получение всех сущностей;
+     * @getAllEntity - получение всех сущностей;
      * */
-    List<Student> getAllStudent();
+    List<StudentGroup> getStudentGroup();
 }

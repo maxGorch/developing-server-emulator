@@ -1,4 +1,4 @@
-package com.omsu.gorch825.Response.Student;
+package com.omsu.gorch825.view.Student;
 
 public class StudentView {
     /*

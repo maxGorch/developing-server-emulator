@@ -1,4 +1,4 @@
-package com.omsu.gorch825.Request.Student;
+package com.omsu.gorch825.models.Student;
 
 import com.omsu.gorch825.StudentStatus;
 

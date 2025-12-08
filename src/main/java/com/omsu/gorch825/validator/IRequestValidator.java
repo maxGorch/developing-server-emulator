@@ -1,4 +1,4 @@
-package com.omsu.gorch825;
+package com.omsu.gorch825.validator;
 
 import java.util.List;
 

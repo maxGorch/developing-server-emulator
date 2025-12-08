@@ -1,4 +1,4 @@
-package com.omsu.gorch825.Request.StudentGroup;
+package com.omsu.gorch825.models.StudentGroup;
 
 
 public class AddStudentGroupRequest
