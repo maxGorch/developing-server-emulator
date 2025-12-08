@@ -2,6 +2,8 @@ package com.omsu.gorch825.Validators.Student;
 
 import com.omsu.gorch825.IRequestValidator;
 import com.omsu.gorch825.Request.Student.AddStudentRequest;
+import com.omsu.gorch825.Validators.IdValidator;
+import com.omsu.gorch825.Validators.StatusValidator;
 import com.omsu.gorch825.Validators.StringValidator;
 
 import java.util.*;
@@ -12,14 +14,36 @@ public class AddStudentRequestValidator implements IRequestValidator<AddStudentR
     {
         List<String> except = new ArrayList<>();
 
-        String resultValidator = StringValidator.stringIsCorrect(
-                request.getFirstName(),"firstName"
+        String firstNameStudentValidator = StringValidator.stringIsCorrect(
+                request.getFirstName(),"FirstName"
         );
+        if(firstNameStudentValidator != null)
+            except.add(firstNameStudentValidator);
 
-        if(resultValidator != null)
-        {
-            except.add(resultValidator);
-        }
+        String middleNameStudentValidator = StringValidator.stringIsCorrect(
+                request.getMiddleName(),"MiddleName"
+        );
+        if( middleNameStudentValidator != null)
+            except.add(middleNameStudentValidator);
+
+        String lastNameStudentValidator = StringValidator.stringIsCorrect(
+                request.getLastName(),"LastName"
+        );
+        if(lastNameStudentValidator != null)
+            except.add(lastNameStudentValidator);
+
+        String idStudentValidator = IdValidator.idIsCorrect(
+                request.getIdStudentGroup(),"Student ID"
+        );
+        if (idStudentValidator!=null)
+            except.add(idStudentValidator);
+
+        String statusIdValidator = StatusValidator.statusIsCorrect(
+                request.getStatus(),"Student status"
+        );
+        if (statusIdValidator!=null)
+            except.add(statusIdValidator);
+
         return except;
     }
 
