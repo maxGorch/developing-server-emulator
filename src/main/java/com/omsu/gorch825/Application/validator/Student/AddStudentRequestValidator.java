@@ -32,11 +32,11 @@ public class AddStudentRequestValidator implements IRequestValidator<AddStudentR
         if(lastNameStudentValidator != null)
             except.add(lastNameStudentValidator);
 
-        String idStudentValidator = IdValidator.idIsCorrect(
+        String idStudentGroupValidator = IdValidator.idIsCorrect(
                 request.getIdStudentGroup(),"Student ID"
         );
-        if (idStudentValidator!=null)
-            except.add(idStudentValidator);
+        if (idStudentGroupValidator!=null)
+            except.add(idStudentGroupValidator);
 
         String statusIdValidator = StatusValidator.statusIsCorrect(
                 request.getStatus(),"Student status"
