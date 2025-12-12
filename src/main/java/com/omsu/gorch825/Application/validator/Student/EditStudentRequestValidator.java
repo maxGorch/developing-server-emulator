@@ -1,17 +1,17 @@
 package com.omsu.gorch825.Application.validator.Student;
 
 import com.omsu.gorch825.Application.validator.IRequestValidator;
-import com.omsu.gorch825.Domain.models.Student.AddStudentRequest;
 import com.omsu.gorch825.Application.validator.IdValidator;
 import com.omsu.gorch825.Application.validator.StatusValidator;
 import com.omsu.gorch825.Application.validator.StringValidator;
+import com.omsu.gorch825.Domain.models.Student.EditStudentRequest;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-public class AddStudentRequestValidator implements IRequestValidator<AddStudentRequest> {
+public class EditStudentRequestValidator implements IRequestValidator<EditStudentRequest> {
     @Override
-    public List<String> validate(AddStudentRequest request)
-    {
+    public List<String> validate(EditStudentRequest request) {
         List<String> except = new ArrayList<>();
 
         String firstNameStudentValidator = StringValidator.stringIsCorrect(
@@ -32,6 +32,12 @@ public class AddStudentRequestValidator implements IRequestValidator<AddStudentR
         if(lastNameStudentValidator != null)
             except.add(lastNameStudentValidator);
 
+        String idStudentValidator = IdValidator.idIsCorrect(
+                request.getId(),"Student ID"
+        );
+        if (idStudentValidator!=null)
+            except.add(idStudentValidator);
+
         String idStudentGroupValidator = IdValidator.idIsCorrect(
                 request.getIdStudentGroup(),"Student Group ID"
         );
@@ -46,5 +52,4 @@ public class AddStudentRequestValidator implements IRequestValidator<AddStudentR
 
         return except;
     }
-
 }
