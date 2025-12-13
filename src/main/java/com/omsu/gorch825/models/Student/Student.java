@@ -52,6 +52,30 @@ public class Student {
         return firstName;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setStatus(StudentStatus status) {
+        this.status = status;
+    }
+
+    public void setGroup(StudentGroup group) {
+        this.group = group;
+    }
+
     @Override
     public final boolean equals(Object o) {
         if (!(o instanceof Student student)) return false;
