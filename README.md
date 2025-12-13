@@ -2,17 +2,17 @@
 ```
 com.omsu.gorch825
 |
-├── controller/ # REST контроллеры (Слой API)
+├── controller/ # REST контроллеры 
 |
-├── service/ # Бизнес-логика (Слой Application)
+├── service/ # Бизнес-логика 
 |
-├── repository/ # Работа с данными (Слой DataAccess / Domain)
+├── repository/ # Работа с данными 
 |
-├── model/ # Сущности (Слой Domain - Ядро)
+├── model/ # Сущности 
 |
-├── dto/ # Request/Response классы (Слой API)
+├── dto/ # Request/Response классы 
 |
-└── validation/ # Валидаторы (Слой Application)
+└── validation/ # Валидаторы
 ```
 - Ядро (model, repository): Правила и данные.
 - Логика (validation, service): Обработка и проверка.
