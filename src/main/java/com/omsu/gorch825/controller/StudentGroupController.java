@@ -3,6 +3,7 @@ package com.omsu.gorch825.controller;
 import com.omsu.gorch825.dto.Request.StudentGroup.*;
 import com.omsu.gorch825.dto.Response.StudentGroup.*;
 import com.omsu.gorch825.models.Student.Student;
+import com.omsu.gorch825.models.StudentGroup.StudentGroupView;
 import com.omsu.gorch825.repository.IGroupStudentRepositories;
 import com.omsu.gorch825.repository.IStudentRepositories;
 import com.omsu.gorch825.validation.StudentGroup.*;

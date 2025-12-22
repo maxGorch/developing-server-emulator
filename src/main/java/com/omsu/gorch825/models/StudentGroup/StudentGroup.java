@@ -12,6 +12,11 @@ public class StudentGroup {
     private Long id;
     private String nameGroup;
 
+    public StudentGroup()
+    {
+
+    }
+
     public StudentGroup(Long id, String nameGroup) {
         this.id = id;
         this.nameGroup = nameGroup;

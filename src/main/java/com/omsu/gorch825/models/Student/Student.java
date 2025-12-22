@@ -19,6 +19,9 @@ public class Student {
     private StudentStatus status;
     private StudentGroup group;
 
+    public Student()
+    {}
+
     public Student(Long id, StudentGroup group, String firstName, String middleName, String lastName, StudentStatus status) {
         this.id = id;
         this.group = group;
@@ -98,4 +101,5 @@ public class Student {
         result = 31 * result + getGroup().hashCode();
         return result;
     }
+
 }

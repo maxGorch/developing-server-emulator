@@ -1,5 +1,7 @@
 package com.omsu.gorch825.dto.Request.Student;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.omsu.gorch825.models.StudentStatus;
 
 public class AddStudentRequest
@@ -9,8 +11,12 @@ public class AddStudentRequest
     private String lastName;
     private StudentStatus status;
     private Long idStudentGroup;
-
-    public AddStudentRequest(Long idStudentGroup, String firstName, String middleName, String lastName, StudentStatus status) {
+    @JsonCreator
+    public AddStudentRequest(@JsonProperty("idStudentGroup") Long idStudentGroup,
+                             @JsonProperty("firstName") String firstName,
+                             @JsonProperty("middleName") String middleName,
+                             @JsonProperty("lastName") String lastName,
+                             @JsonProperty("status") StudentStatus status) {
         this.idStudentGroup = idStudentGroup;
         this.firstName = firstName;
         this.middleName = middleName;
