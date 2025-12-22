@@ -1,8 +1,8 @@
-package com.omsu.gorch825.models.Discipline;
+package com.omsu.gorch825.models.Subject;
 
 import java.util.Objects;
 
-public class Discipline
+public class Subject
 {
      /*
       Написать следующий набор классов для внутреннего представления сущностей. Каждый
@@ -13,7 +13,7 @@ public class Discipline
     private Long id;
     private String nameDiscipline;
 
-    public Discipline(Long id, String nameDiscipline) {
+    public Subject(Long id, String nameDiscipline) {
         this.id = id;
         this.nameDiscipline = nameDiscipline;
     }
@@ -28,7 +28,7 @@ public class Discipline
 
     @Override
     public final boolean equals(Object o) {
-        if (!(o instanceof Discipline that)) return false;
+        if (!(o instanceof Subject that)) return false;
 
         return Objects.equals(getId(), that.getId()) && Objects.equals(getNameDiscipline(), that.getNameDiscipline());
     }

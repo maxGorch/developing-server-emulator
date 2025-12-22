@@ -1,10 +1,10 @@
-package com.omsu.gorch825.dto.Response.Discipline;
+package com.omsu.gorch825.models.Subject;
 
-public class DisciplineView {
+public class SubjectView {
     private Long id;
     private String nameDiscipline;
 
-    public DisciplineView(Long id, String nameDiscipline) {
+    public SubjectView(Long id, String nameDiscipline) {
         this.id = id;
         this.nameDiscipline = nameDiscipline;
     }

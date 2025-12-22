@@ -1,4 +1,4 @@
-package com.omsu.gorch825.dto.Response.StudentGroup;
+package com.omsu.gorch825.models.StudentGroup;
 
 public class StudentGroupView {
     private Long id;

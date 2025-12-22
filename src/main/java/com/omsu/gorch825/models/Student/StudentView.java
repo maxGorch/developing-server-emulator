@@ -1,4 +1,4 @@
-package com.omsu.gorch825.dto.Response.Student;
+package com.omsu.gorch825.models.Student;
 
 public class StudentView {
     /*

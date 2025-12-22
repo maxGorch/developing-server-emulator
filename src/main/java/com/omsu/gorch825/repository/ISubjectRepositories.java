@@ -1,10 +1,10 @@
 package com.omsu.gorch825.repository;
 
-import com.omsu.gorch825.models.Discipline.Discipline;
+import com.omsu.gorch825.models.Subject.Subject;
 
 import java.util.List;
 
-public interface IDisciplineRepositories
+public interface ISubjectRepositories
 {
      /*
         Написать набор интерфейсов репозиториев (хранилищ данных) для сущностей из п.1.
@@ -25,14 +25,14 @@ public interface IDisciplineRepositories
      * @model - на входе сущность с id = null, сущность добавляется в хранилище,
      * при этом ей назначается значение id, этот id возвращается как результат)
      * */
-    Long addDiscipline(Discipline model);
+    Long addDiscipline(Subject model);
 
     /**
      * @editEntity  - редактирование существующей сущности
      * @model - на входе сущность с непустым id, входная
      *         сущность подменяет старую
      * */
-    void editDiscipline(Discipline model);
+    void editDiscipline(Subject model);
 
     /**
      * @deleteEntity - удаление сущности по id;
@@ -44,10 +44,10 @@ public interface IDisciplineRepositories
      * @getEntityById - получение сущности по id и возвращает объект этой сущности как результат;
      * @idEntity - id  сущности
      * */
-    Discipline getDisciplineById(Long idEntity);
+    Subject getDisciplineById(Long idEntity);
 
     /**
      * @getAllEntity - получение всех сущностей;
      * */
-    List<Discipline> getDiscipline();
+    List<Subject> getDiscipline();
 }
