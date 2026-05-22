@@ -4,7 +4,7 @@ target/
 !**/src/test/**/target/
 
 docs/
-
+.env
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
