@@ -20,5 +20,13 @@ public class StudentGroupEntity extends AuditableEntity {
 
     public StudentGroupEntity(String name) {
         this.name = name;
+    };
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

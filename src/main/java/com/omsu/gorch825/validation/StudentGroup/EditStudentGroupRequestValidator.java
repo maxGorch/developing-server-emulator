@@ -14,17 +14,13 @@ public class EditStudentGroupRequestValidator implements IRequestValidator<EditS
         List<String> except = new ArrayList<>();
 
         String newNameStudentGroupValidator = StringValidator.stringIsCorrect(
-                request.getNewNameStudentGroup(), "New StudentGroup Name"
-        );
-        if(newNameStudentGroupValidator != null)
-        {
+                request.getNewNameStudentGroup(), "New StudentGroup Name");
+        if (newNameStudentGroupValidator != null) {
             except.add(newNameStudentGroupValidator);
         }
         String idValidator = IdValidator.idIsCorrect(
-                request.getId(), "StudentGroup Id"
-        );
-        if(idValidator != null)
-        {
+                request.getId(), "StudentGroup Id");
+        if (idValidator != null) {
             except.add(idValidator);
         }
         return except;
