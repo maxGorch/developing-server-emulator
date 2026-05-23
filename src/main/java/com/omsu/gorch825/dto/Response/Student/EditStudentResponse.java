@@ -1,9 +1,8 @@
 package com.omsu.gorch825.dto.Response.Student;
 
-import com.omsu.gorch825.models.StudentStatus;
+import com.omsu.gorch825.models.Enums.StudentStatus;
 
-public class EditStudentResponse
-{
+public class EditStudentResponse {
     private Long id;
     private String firstName;
     private String middleName;
@@ -11,7 +10,8 @@ public class EditStudentResponse
     private StudentStatus status;
     private Long idStudentGroup;
 
-    public EditStudentResponse(Long id, Long idStudentGroup, StudentStatus status, String lastName, String middleName, String firstName) {
+    public EditStudentResponse(Long id, Long idStudentGroup, StudentStatus status, String lastName, String middleName,
+            String firstName) {
         this.id = id;
         this.idStudentGroup = idStudentGroup;
         this.status = status;

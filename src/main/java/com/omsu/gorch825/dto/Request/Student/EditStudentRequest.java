@@ -2,7 +2,7 @@ package com.omsu.gorch825.dto.Request.Student;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.omsu.gorch825.models.StudentStatus;
+import com.omsu.gorch825.models.Enums.StudentStatus;
 
 public class EditStudentRequest {
     private Long id;
@@ -14,11 +14,11 @@ public class EditStudentRequest {
 
     @JsonCreator
     public EditStudentRequest(@JsonProperty("id") Long id,
-                              @JsonProperty("idStudentGroup") Long idStudentGroup,
-                              @JsonProperty("firstName") String firstName,
-                              @JsonProperty("middleName") String middleName,
-                              @JsonProperty("lastName") String lastName,
-                              @JsonProperty("status") StudentStatus status) {
+            @JsonProperty("idStudentGroup") Long idStudentGroup,
+            @JsonProperty("firstName") String firstName,
+            @JsonProperty("middleName") String middleName,
+            @JsonProperty("lastName") String lastName,
+            @JsonProperty("status") StudentStatus status) {
         this.id = id;
         this.idStudentGroup = idStudentGroup;
         this.status = status;

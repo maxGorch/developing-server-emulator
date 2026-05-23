@@ -1,6 +1,6 @@
 package com.omsu.gorch825.dto.Response.Student;
 
-import com.omsu.gorch825.models.StudentStatus;
+import com.omsu.gorch825.models.Enums.StudentStatus;
 
 public class GetStudentByIdResponse {
     private Long id;
@@ -10,7 +10,8 @@ public class GetStudentByIdResponse {
     private StudentStatus status;
     private String groupName;
 
-    public GetStudentByIdResponse(Long id, String firstName, String middleName, String lastName, StudentStatus status, String groupName) {
+    public GetStudentByIdResponse(Long id, String firstName, String middleName, String lastName, StudentStatus status,
+            String groupName) {
         this.id = id;
         this.firstName = firstName;
         this.middleName = middleName;

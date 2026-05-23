@@ -1,17 +1,20 @@
 package com.omsu.gorch825.models.Student;
 
+import com.omsu.gorch825.models.Enums.StudentStatus;
 import com.omsu.gorch825.models.StudentGroup.StudentGroup;
-import com.omsu.gorch825.models.StudentStatus;
 
 import java.util.Objects;
 
 public class Student {
     /*
-      Написать следующий набор классов для внутреннего представления сущностей. Каждый
-      класс включает в себя поле id — уникальный целочисленный идентификатор (может
-      обращаться в null), конструктор по значениям всех полей, геттеры, equals и hashCode.
-      2) «Студент»: хранит ФИО студента (по отдельности), статус студента (учится, в а/о,отчислен), группу (объект типа «Группа»).
-    */
+     * Написать следующий набор классов для внутреннего представления сущностей.
+     * Каждый
+     * класс включает в себя поле id — уникальный целочисленный идентификатор (может
+     * обращаться в null), конструктор по значениям всех полей, геттеры, equals и
+     * hashCode.
+     * 2) «Студент»: хранит ФИО студента (по отдельности), статус студента (учится,
+     * в а/о,отчислен), группу (объект типа «Группа»).
+     */
     private Long id;
     private String firstName;
     private String middleName;
@@ -19,10 +22,11 @@ public class Student {
     private StudentStatus status;
     private StudentGroup group;
 
-    public Student()
-    {}
+    public Student() {
+    }
 
-    public Student(Long id, StudentGroup group, String firstName, String middleName, String lastName, StudentStatus status) {
+    public Student(Long id, StudentGroup group, String firstName, String middleName, String lastName,
+            StudentStatus status) {
         this.id = id;
         this.group = group;
         this.firstName = firstName;
@@ -81,7 +85,8 @@ public class Student {
 
     @Override
     public final boolean equals(Object o) {
-        if (!(o instanceof Student student)) return false;
+        if (!(o instanceof Student student))
+            return false;
 
         return Objects.equals(getId(), student.getId()) &&
                 getFirstName().equals(student.getFirstName()) &&

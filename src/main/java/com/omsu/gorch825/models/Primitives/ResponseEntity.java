@@ -1,4 +1,4 @@
-package com.omsu.gorch825.models;
+package com.omsu.gorch825.models.Primitives;
 
 public class ResponseEntity<T> {
     private T data;

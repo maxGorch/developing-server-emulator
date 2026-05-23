@@ -1,6 +1,6 @@
 package com.omsu.gorch825.models.Student;
 
-import com.omsu.gorch825.models.StudentStatus;
+import com.omsu.gorch825.models.Enums.StudentStatus;
 import com.omsu.gorch825.models.Primitives.AuditableEntity;
 import com.omsu.gorch825.models.StudentGroup.StudentGroupEntity;
 
@@ -51,5 +51,9 @@ public class StudentEntity extends AuditableEntity {
         this.middleName = middleName;
         this.groupId = groupId;
         this.status = status;
+    }
+
+    public Long getId() {
+        return id;
     }
 }
