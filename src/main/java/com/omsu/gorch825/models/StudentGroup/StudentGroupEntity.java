@@ -1,7 +1,5 @@
 package com.omsu.gorch825.models.StudentGroup;
 
-import java.time.LocalDateTime;
-
 import com.omsu.gorch825.models.Primitives.AuditableEntity;
 
 import jakarta.persistence.*;

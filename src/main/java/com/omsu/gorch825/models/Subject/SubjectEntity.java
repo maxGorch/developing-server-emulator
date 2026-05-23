@@ -1,17 +1,27 @@
 package com.omsu.gorch825.models.Subject;
 
-import java.time.LocalDateTime;
+import com.omsu.gorch825.models.Primitives.AuditableEntity;
 
-public class SubjectEntity {
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "subject")
+public class SubjectEntity extends AuditableEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "subject_id", nullable = false)
     private Long id;
+
+    @Column(name = "name_subject", nullable = false)
     private String nameSubject;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
 
     public SubjectEntity(Long id, String nameSubject) {
         this.id = id;
         this.nameSubject = nameSubject;
-        this.createdAt = LocalDateTime.now();
-        this.updatedAt = LocalDateTime.now();
     }
 }
