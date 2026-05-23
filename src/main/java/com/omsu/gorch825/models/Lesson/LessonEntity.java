@@ -1,7 +1,9 @@
 package com.omsu.gorch825.models.Lesson;
 
+import java.time.LocalDate;
+
 import com.omsu.gorch825.models.Primitives.AuditableEntity;
-import com.omsu.gorch825.models.StudentGroup.StudentGroup;
+import com.omsu.gorch825.models.StudentGroup.StudentGroupEntity;
 import com.omsu.gorch825.models.Subject.SubjectEntity;
 import com.omsu.gorch825.models.Teacher.TeacherEntity;
 
@@ -22,8 +24,8 @@ public class LessonEntity extends AuditableEntity {
     @Column(name = "lesson_id", nullable = false)
     private Long id;
 
-    @Column(name = "date", nullable = false)
-    private String date;
+    @Column(name = "lesson_date", nullable = false)
+    private LocalDate date;
 
     @Column(name = "pair_number", nullable = false)
     private int pairNumber;
@@ -34,13 +36,13 @@ public class LessonEntity extends AuditableEntity {
 
     @OneToOne
     @JoinColumn(name = "group_id", nullable = false)
-    private StudentGroup groupId;
+    private StudentGroupEntity groupId;
 
     @OneToOne
     @JoinColumn(name = "subject_id", nullable = false)
     private SubjectEntity subjectId;
 
-    public LessonEntity(Long id, String date, int pairNumber, TeacherEntity teacherId, StudentGroup groupId,
+    public LessonEntity(Long id, LocalDate date, int pairNumber, TeacherEntity teacherId, StudentGroupEntity groupId,
             SubjectEntity subjectId) {
         this.id = id;
         this.date = date;

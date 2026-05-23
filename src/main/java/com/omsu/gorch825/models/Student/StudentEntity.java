@@ -20,7 +20,7 @@ import jakarta.persistence.Table;
 public class StudentEntity extends AuditableEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "student_id", nullable = false)
+    @Column(name = "student_id", nullable = false, insertable = false, updatable = false)
     private Long id;
 
     @Column(name = "first_name", nullable = false, length = 100)
@@ -29,7 +29,7 @@ public class StudentEntity extends AuditableEntity {
     @Column(name = "last_name", nullable = false, length = 100)
     private String lastName;
 
-    @Column(name = "middle_name", length = 100)
+    @Column(name = "middle_name", nullable = false, length = 100)
     private String middleName;
 
     @ManyToOne

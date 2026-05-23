@@ -17,8 +17,12 @@ public class SubjectEntity extends AuditableEntity {
     @Column(name = "subject_id", nullable = false)
     private Long id;
 
-    @Column(name = "name_subject", nullable = false)
+    @Column(name = "name_subject", nullable = false, length = 100)
     private String nameSubject;
+
+    public SubjectEntity() {
+
+    }
 
     public SubjectEntity(Long id, String nameSubject) {
         this.id = id;

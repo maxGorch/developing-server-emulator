@@ -12,8 +12,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -24,13 +23,17 @@ public class AttendanceEntity extends AuditableEntity {
     @Column(name = "lesson_attendance_id", nullable = false)
     private Long id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "lesson_id", nullable = false)
     private LessonEntity lessonId;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "student_id ", nullable = false)
     private List<StudentEntity> presentStudentIds; // Список ID студентов
+
+    public AttendanceEntity() {
+
+    }
 
     public AttendanceEntity(LessonEntity lessonId, List<StudentEntity> presentStudentIds) {
         this.lessonId = lessonId;
