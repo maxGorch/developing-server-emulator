@@ -1,10 +1,10 @@
-CREATE TABLE student_group(
+CREATE TABLE IF NOT EXISTS student_group(
     group_id BIGSERIAL PRIMARY KEY,
     group_name VARCHAR(100) NOT NULL,
     created_at TIMESTAMP NOT NULL,
     updated_at TIMESTAMP NOT NULL
 );
-CREATE TABLE student(
+CREATE TABLE IF NOT EXISTS student(
     student_id BIGSERIAL PRIMARY KEY,
     first_name VARCHAR(100) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE student(
     created_at TIMESTAMP NOT NULL,
     updated_at TIMESTAMP NOT NULL
 );
-CREATE TABLE teacher(
+CREATE TABLE IF NOT EXISTS teacher(
     teacher_id BIGSERIAL PRIMARY KEY,
 
     first_name VARCHAR(100) NOT NULL,
@@ -26,13 +26,13 @@ CREATE TABLE teacher(
     updated_at TIMESTAMP NOT NULL
 );
 
-CREATE TABLE subject(
+CREATE TABLE IF NOT EXISTS subject(
     subject_id BIGSERIAL PRIMARY KEY,
     name_subject VARCHAR(100) NOT NULL,
     created_at TIMESTAMP NOT NULL,
     updated_at TIMESTAMP NOT NULL
 );
-CREATE TABLE  lesson(
+CREATE TABLE IF NOT EXISTS lesson(
     lesson_Id BIGSERIAL PRIMARY KEY,
     lesson_date DATE NOT NULL,
     pair_number INT NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE  lesson(
     created_at TIMESTAMP NOT NULL,
     updated_at TIMESTAMP NOT NULL
 );
-CREATE TABLE lesson_attendance(
+CREATE TABLE IF NOT EXISTS lesson_attendance(
     lesson_attendance_id BIGSERIAL PRIMARY KEY, 
    
     lesson_id BIGINT NOT NULL REFERENCES lesson(lesson_id) ON DELETE CASCADE,
@@ -54,3 +54,11 @@ CREATE TABLE lesson_attendance(
     updated_at TIMESTAMP NOT NULL
 );
 
+CREATE INDEX IF NOT EXISTS idx_student_group_id ON student(group_id);
+
+CREATE INDEX IF NOT EXISTS idx_lesson_teacher_id ON lesson(teacher_id);
+CREATE INDEX IF NOT EXISTS idx_lesson_group_id ON lesson(group_id);
+CREATE INDEX IF NOT EXISTS idx_lesson_subject_id ON lesson(subject_id);
+
+CREATE INDEX IF NOT EXISTS idx_attendance_lesson_id ON lesson_attendance(lesson_id);
+CREATE INDEX IF NOT EXISTS idx_attendance_student_id ON lesson_attendance(student_id);
