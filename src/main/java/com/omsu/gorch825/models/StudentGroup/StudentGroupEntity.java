@@ -2,50 +2,25 @@ package com.omsu.gorch825.models.StudentGroup;
 
 import java.time.LocalDateTime;
 
-public class StudentGroupEntity {
+import com.omsu.gorch825.models.Primitives.AuditableEntity;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "student_group")
+public class StudentGroupEntity extends AuditableEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "group_id")
     private Long id;
+
+    @Column(name = "group_name", nullable = false, length = 100)
     private String name;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
 
-    public StudentGroupEntity(Long id, String name) {
-        this.id = id;
-        this.name = name;
-        this.createdAt = LocalDateTime.now();
-        this.updatedAt = LocalDateTime.now();
+    public StudentGroupEntity() {
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+    public StudentGroupEntity(String name) {
         this.name = name;
     }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    // Геттеры и сеттеры
 }
