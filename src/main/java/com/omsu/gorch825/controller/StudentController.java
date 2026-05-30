@@ -4,10 +4,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.omsu.gorch825.dto.Request.Student.AddStudentRequest;
+import com.omsu.gorch825.dto.Request.Student.EditStudentRequest;
+import com.omsu.gorch825.dto.Response.Student.AddStudentResponse;
+import com.omsu.gorch825.dto.Response.Student.EditStudentResponse;
+import com.omsu.gorch825.models.Primitives.ApiResponse;
 import com.omsu.gorch825.service.StudentService;
 
 import jakarta.validation.Valid;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -21,8 +26,14 @@ public class StudentController {
     }
 
     @PostMapping
-    public void addStudent(@Valid @RequestBody AddStudentRequest request) {
-        studentService.addStudent(request);
+    public ApiResponse<AddStudentResponse> addStudent(@Valid @RequestBody AddStudentRequest request) {
+        return ApiResponse.success(studentService.addStudent(request));
+    }
+
+    @PostMapping("/{id}")
+    public ApiResponse<EditStudentResponse> editStudent(@Valid @RequestBody EditStudentRequest request,
+            @PathVariable Long id) {
+        return ApiResponse.success(studentService.editStudent(request, id));
     }
 
 }

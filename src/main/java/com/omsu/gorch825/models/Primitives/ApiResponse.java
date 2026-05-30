@@ -2,12 +2,18 @@ package com.omsu.gorch825.models.Primitives;
 
 import org.springframework.http.HttpStatus;
 
-public class ApiResponse<T> {
-    private boolean success;
-    private T data;
-    private HttpStatus errorCode;
-    private String errorMessage;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
+public class ApiResponse<T> {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private boolean success;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private T data;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private HttpStatus errorCode;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private String errorMessage;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private StackTraceElement[] details;
 
     public ApiResponse(boolean success, T data, HttpStatus errorCode, String errorMessage,

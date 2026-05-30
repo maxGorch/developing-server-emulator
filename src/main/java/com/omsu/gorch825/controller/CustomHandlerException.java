@@ -17,7 +17,7 @@ public class CustomHandlerException {
     @ExceptionHandler(NotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public ApiResponse<Object> handleNotFoundException(NotFoundException ex) {
-        return ApiResponse.error(HttpStatus.NOT_FOUND, ex.getMessage(), null);
+        return ApiResponse.error(ex.getStatus(), ex.getMessage(), ex.getStackTrace());
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -30,6 +30,6 @@ public class CustomHandlerException {
                 .distinct()
                 .collect(Collectors.joining("; "));
 
-        return ApiResponse.error(HttpStatus.BAD_REQUEST, message, null);
+        return ApiResponse.error(HttpStatus.BAD_REQUEST, message, ex.getStackTrace());
     }
 }

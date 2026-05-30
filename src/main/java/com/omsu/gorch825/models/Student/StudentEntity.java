@@ -34,7 +34,7 @@ public class StudentEntity extends AuditableEntity {
 
     @ManyToOne
     @JoinColumn(name = "group_id", nullable = false)
-    private StudentGroupEntity groupId; // Ссылка на ID группы
+    private StudentGroupEntity group; // Ссылка на группу
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false, length = 50)
@@ -44,16 +44,36 @@ public class StudentEntity extends AuditableEntity {
 
     }
 
-    public StudentEntity(String firstName, String lastName, String middleName, StudentGroupEntity groupId,
+    public StudentEntity(String firstName, String lastName, String middleName, StudentGroupEntity group,
             StudentStatus status) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.middleName = middleName;
-        this.groupId = groupId;
+        this.group = group;
         this.status = status;
     }
 
     public Long getId() {
         return id;
+    }
+
+    public StudentGroupEntity getGroup() {
+        return this.group;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getMiddleName() {
+        return middleName;
+    }
+
+    public StudentStatus getStatus() {
+        return status;
     }
 }

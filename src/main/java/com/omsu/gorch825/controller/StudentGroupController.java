@@ -31,7 +31,8 @@ public class StudentGroupController {
     }
 
     @PatchMapping("/{id}")
-    public ApiResponse<EditStudentGroupResponse> editStudentGroup(@Valid @RequestBody EditStudentGroupRequest request, @PathVariable Long id) {
+    public ApiResponse<EditStudentGroupResponse> editStudentGroup(@Valid @RequestBody EditStudentGroupRequest request,
+            @PathVariable Long id) {
         return ApiResponse.success(studentGroupService.editStudentGroup(request, id));
     }
 
