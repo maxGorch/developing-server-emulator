@@ -12,6 +12,7 @@ import com.omsu.gorch825.service.StudentService;
 
 import jakarta.validation.Valid;
 
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,7 +31,7 @@ public class StudentController {
         return ApiResponse.success(studentService.addStudent(request));
     }
 
-    @PostMapping("/{id}")
+    @PatchMapping("/{id}")
     public ApiResponse<EditStudentResponse> editStudent(@Valid @RequestBody EditStudentRequest request,
             @PathVariable Long id) {
         return ApiResponse.success(studentService.editStudent(request, id));

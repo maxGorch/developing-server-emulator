@@ -12,13 +12,18 @@ public class UpdateAttendanceRequest {
     private Long lessonId;
 
     @NotEmpty(message = "studentIds must not be empty")
-    private List<Long> studentIds; // ID присутствующих студентов [cite: 18]
+    private List<Long> studentIds;
 
     public UpdateAttendanceRequest(Long lessonId, List<Long> studentIds) {
         this.lessonId = lessonId;
         this.studentIds = studentIds;
     }
 
-    public Long getLessonId() { return lessonId; }
-    public List<Long> getStudentIds() { return studentIds; }
+    public Long getLessonId() {
+        return lessonId;
+    }
+
+    public List<Long> getStudentIds() {
+        return studentIds;
+    }
 }

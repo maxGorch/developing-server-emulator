@@ -18,7 +18,7 @@ public class EditStudentGroupRequest {
     private String newNameStudentGroup;
 
     @JsonCreator
-    public EditStudentGroupRequest(@JsonProperty("idGroup") Long id,
+    public EditStudentGroupRequest(@JsonProperty("id") Long id,
             @JsonProperty("newNameStudentGroup") String newNameStudentGroup) {
         this.id = id;
         this.newNameStudentGroup = newNameStudentGroup;
