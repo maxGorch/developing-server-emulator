@@ -23,31 +23,13 @@ public class StudentGroupController {
     }
 
     @PostMapping
-    public ResponseEntity<ApiResponse<?>> addStudentGroup(@RequestBody AddStudentGroupRequest request) {
-        try {
-            Long id = studentGroupService.addStudentGroup(request);
-            return ResponseEntity
-                    .status(HttpStatus.OK)
-                    .body(ApiResponse.success(id));
-        } catch (Exception e) {
-            return ResponseEntity
-                    .status(HttpStatus.BAD_REQUEST)
-                    .body(ApiResponse.error("BAD REQUEST", "Произошла ошибка при добавлении студента", null));
-        }
+    public void addStudentGroup(@RequestBody AddStudentGroupRequest request) {
+        studentGroupService.addStudentGroup(request);
     }
 
     @PatchMapping
-    public ResponseEntity<ApiResponse<?>> editStudentGroup(@RequestBody EditStudentGroupRequest request) {
-        try {
-            studentGroupService.editStudentGroup(request);
-            return ResponseEntity
-                    .status(HttpStatus.OK)
-                    .body(ApiResponse.success(null));
-        } catch (Exception e) {
-            return ResponseEntity
-                    .status(HttpStatus.BAD_REQUEST)
-                    .body(ApiResponse.error("BAD REQUEST", "Произошла ошибка при редактировании студента", null));
-        }
+    public void editStudentGroup(@RequestBody EditStudentGroupRequest request) {
+        studentGroupService.editStudentGroup(request);
     }
 
 }

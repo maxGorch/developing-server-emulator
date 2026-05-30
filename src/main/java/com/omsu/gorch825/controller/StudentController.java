@@ -4,11 +4,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.omsu.gorch825.dto.Request.Student.AddStudentRequest;
-import com.omsu.gorch825.models.Primitives.ApiResponse;
 import com.omsu.gorch825.service.StudentService;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -22,17 +19,8 @@ public class StudentController {
     }
 
     @PostMapping
-    public ResponseEntity<ApiResponse<?>> addStudent(@RequestBody AddStudentRequest request) {
-        Long id = studentService.addStudent(request);
-
-        if (id == null) {
-            return ResponseEntity
-                    .status(HttpStatus.BAD_REQUEST)
-                    .body(ApiResponse.error("BAD REQUEST", "Ошибка при добавлении студента", null));
-        }
-        return ResponseEntity
-                .status(HttpStatus.CREATED)
-                .body(ApiResponse.success(id));
+    public void addStudent(@RequestBody AddStudentRequest request) {
+        studentService.addStudent(request);
     }
 
 }
