@@ -6,55 +6,41 @@ import org.springframework.stereotype.Service;
 
 import com.omsu.gorch825.dto.Request.StudentGroup.AddStudentGroupRequest;
 import com.omsu.gorch825.dto.Request.StudentGroup.EditStudentGroupRequest;
+import com.omsu.gorch825.dto.Response.StudentGroup.AddStudentGroupResponse;
+import com.omsu.gorch825.dto.Response.StudentGroup.EditStudentGroupResponse;
 import com.omsu.gorch825.models.StudentGroup.StudentGroupEntity;
 import com.omsu.gorch825.repository.IGroupStudentRepositories;
-import com.omsu.gorch825.validation.StudentGroup.AddStudentGroupRequestValidator;
-import com.omsu.gorch825.validation.StudentGroup.EditStudentGroupRequestValidator;
 
 @Service
 public class StudentGroupService {
     private final IGroupStudentRepositories groupRepository;
 
-    private final AddStudentGroupRequestValidator addRequestValidator;
-    private final EditStudentGroupRequestValidator editRequestValidator;
-
-    public StudentGroupService(
-            IGroupStudentRepositories groupRepository,
-            AddStudentGroupRequestValidator addRequestValidator,
-            EditStudentGroupRequestValidator editRequestValidator) {
+    public StudentGroupService(IGroupStudentRepositories groupRepository) {
         this.groupRepository = groupRepository;
-        this.addRequestValidator = addRequestValidator;
-        this.editRequestValidator = editRequestValidator;
     }
 
-    public Long addStudentGroup(AddStudentGroupRequest request) {
-
-        List<String> errors = addRequestValidator.validate(request);
-        if (!errors.isEmpty()) {
-            throw new IllegalArgumentException("Ошибка : " + String.join(", ", errors));
-        }
-
+    public AddStudentGroupResponse addStudentGroup(AddStudentGroupRequest request) {
         StudentGroupEntity group = new StudentGroupEntity(
                 request.getNameGroup());
 
-        return groupRepository.save(group).getId();
+        var groupRepos = groupRepository.save(group);
+        var response = new AddStudentGroupResponse(groupRepos.getId(), groupRepos.getName());
+        return response;
     }
 
-    public void editStudentGroup(EditStudentGroupRequest request) {
-        List<String> errors = editRequestValidator.validate(request);
-        if (!errors.isEmpty()) {
-            throw new IllegalArgumentException("Ошибка : " + String.join(", ", errors));
+    public EditStudentGroupResponse editStudentGroup(EditStudentGroupRequest request, Long id) {
+        if (id.equals(request.getId())) {
+            throw new IllegalArgumentException("id в пути и в теле запроса должны быть разными");
         }
         StudentGroupEntity group = groupRepository
-                .findById(request.getId())
-                .orElse(null);
-
-        if (group == null) {
-            throw new IllegalArgumentException("Группа с таким id не найдена");
-        }
+                .findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Группа с таким id не найдена"));
 
         group.setName(request.getNewNameStudentGroup());
-        groupRepository.save(group);
+
+        var groupRepos = groupRepository.save(group);
+        var response = new EditStudentGroupResponse(groupRepos.getId(), groupRepos.getName());
+        return response;
     }
 
     public void deleteStudentGroup(Long id) {

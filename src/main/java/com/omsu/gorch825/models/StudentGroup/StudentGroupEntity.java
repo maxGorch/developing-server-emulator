@@ -29,4 +29,8 @@ public class StudentGroupEntity extends AuditableEntity {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getName() {
+        return this.name;
+    }
 }

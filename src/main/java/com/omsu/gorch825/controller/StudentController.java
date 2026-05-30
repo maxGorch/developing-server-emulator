@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.omsu.gorch825.dto.Request.Student.AddStudentRequest;
 import com.omsu.gorch825.service.StudentService;
 
+import jakarta.validation.Valid;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -19,7 +21,7 @@ public class StudentController {
     }
 
     @PostMapping
-    public void addStudent(@RequestBody AddStudentRequest request) {
+    public void addStudent(@Valid @RequestBody AddStudentRequest request) {
         studentService.addStudent(request);
     }
 
