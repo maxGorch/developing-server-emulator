@@ -10,5 +10,9 @@ import com.omsu.gorch825.models.Primitives.ApiResponse;
 
 @RestControllerAdvice
 public class CustomHandlerException {
-
+    @ExceptionHandler(NotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ApiResponse<Object> handleNotFoundException(NotFoundException ex) {
+        return new ApiResponse<>(false, HttpStatus.NOT_FOUND, ex.getMessage(), null);
+    }
 }
